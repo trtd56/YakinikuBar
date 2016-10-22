@@ -90,14 +90,6 @@ def reset_yakiniku_point(name):
     else:
         return "The user is not registered.\n"
 
-@app.route('/get_point/<name>')
-def get_yakiniku_point(name):
-    res = get_latest(name)
-    if res:
-        return str(res["feeling"])
-    else:
-        return "The user is not registered.\n"
-
 if __name__ == '__main__':
     port = int(os.environ.get('PORT', 5000))
     app.run(host='0.0.0.0', port=port)

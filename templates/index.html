@@ -1,9 +1,9 @@
 {% extends "layout.html" %}
 {% block body %}
-<h1>Flaski</h1>
+<h1>焼き肉ゲージ</h1>
 <ul>
     {% for content in contents %}
-        <li>{{content.name}}/{{content.feeling}}</li>
+        <div class="data" style="display:none">{{content.name}}(->){{content.feeling}}</div>
     {% endfor%}
 </ul>
 {% endblock %}

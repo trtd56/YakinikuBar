@@ -59,7 +59,10 @@ def teardown_request(exception):
 
 @app.route('/')
 def index():
-    return 'Index Page'
+    cur = g.db.execute('select name, feeling from entries order by id desc')
+    datas = [dict(name=row[0], feeling=row[1]) for row in cur.fetchall()]
+    # index.htmlにcontensを引数に渡して実行。
+    return render_template("index.html", contents=datas)
 
 @app.route('/push/<name>/<point>')
 def add_yakiniku_point(name, point):

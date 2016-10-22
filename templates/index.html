@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block body %}
+<h1>Flaski</h1>
+<ul>
+    {% for content in contents %}
+        <li>{{content.name}}/{{content.feeling}}</li>
+    {% endfor%}
+</ul>
+{% endblock %}
